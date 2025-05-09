@@ -1,8 +1,8 @@
 # Game Engine in C
 
 Basic functionalities to implement:
-- [ ] Game Loop
-- [ ] Rendering System
+- [x] Game Loop
+- [/] Rendering System
 - [ ] Input Handling
 - [ ] Scene Management
 - [ ] Physics

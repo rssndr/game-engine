@@ -4,16 +4,16 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -g 
+CFLAGS = -Wall -Wextra -g
 
 # Libraries
-LIBS = 
+LIBS = -lSDL2
 
 # Target executable
 TARGET = build/game
 
 # Source files
-SRCS = src/main.c src/game_loop/game_loop.c
+SRCS = src/main.c src/game_loop/game_loop.c src/rendering/rendering.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
