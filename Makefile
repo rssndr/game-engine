@@ -13,7 +13,7 @@ LIBS = -lSDL2
 TARGET = build/game
 
 # Source files
-SRCS = src/main.c src/game_loop/game_loop.c src/rendering/rendering.c
+SRCS = src/main.c src/game_loop/game_loop.c src/rendering/rendering.c src/input/input.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)

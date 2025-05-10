@@ -19,16 +19,18 @@ int main(void) {
                 return 1;
         }
 
+        // Initialize input
+        Input input;
+        init_input(&input);
+
         printf("Game engine starting...\n");
 
         // Main game loop
         while (game_loop.running) {
-                // Temporary, will move to input.h
-                SDL_Event event;
-                while (SDL_PollEvent(&event)) {
-                        if (event.type == SDL_QUIT) {
-                                game_loop.running = 0;
-                        }
+                process_input(&input);
+                if (input.quit) {
+                        game_loop.running = 0;
+                        break;
                 }
 
                 int should_update = update_game_loop(&game_loop);
@@ -38,14 +40,10 @@ int main(void) {
                 }
 
                 render_frame(&renderer);
-
-                // Temporary: Exit after 10 seconds
-                if (game_loop.frame_count >= 600) {
-                        game_loop.running = 0;
-                }
         }
 
         // Cleanup
+        cleanup_input(&input);
         cleanup_renderer(&renderer);
         printf("Game engine shutting down...\n");
         return 0;
